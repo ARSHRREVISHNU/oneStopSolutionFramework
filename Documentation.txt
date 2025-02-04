@@ -1,0 +1,9 @@
+ mvn clean install "-Dcucumber.tags=@tag1 or @tag2"
+  mvn clean install "-Dcucumber.tags=@tag3"
+ mvn clean install "-Dcucumber.tags=@access, -Dheadless=no, -Dbrowser=chrome"
+  This framework follows the Open closed Principle - Open for Enhancements closed for modifications
+
+  When we use pico-container it will internally handle the Dependency injection
+
+ Acessibility cmd
+  mvn clean install "-Dcucumber.tags=@access", -Dheadless=no, -Dbrowser=chrome

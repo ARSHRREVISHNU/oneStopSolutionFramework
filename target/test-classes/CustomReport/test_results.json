@@ -1,0 +1,129 @@
+[
+  {
+    "run_date": "2025-01-21T15:20:24.225Z",
+    "total_tests": 5,
+    "passed_tests": 4,
+    "failed_tests": 1,
+    "scenarios": [
+      {
+        "name": "Generate Lighthouse Report for a Website",
+        "status": "passed",
+        "steps": [
+          { "name": "Open browser and navigate to login page", "status": "passed" },
+          { "name": "Run Lighthouse tests and generate report", "status": "passed" }
+        ]
+      },
+      {
+        "name": "Verify Login Functionality",
+        "status": "failed",
+        "steps": [
+          { "name": "Enter valid credentials", "status": "passed" },
+          { "name": "Click login button", "status": "failed" }
+        ]
+      }
+    ]
+  },
+  {
+    "run_date": "2025-01-22T16:15:12.500Z",
+    "total_tests": 4,
+    "passed_tests": 3,
+    "failed_tests": 1,
+    "scenarios": [
+      {
+        "name": "Check Navigation Bar",
+        "status": "passed",
+        "steps": [
+          { "name": "Navigate to the home page", "status": "passed" },
+          { "name": "Verify all menu items", "status": "passed" }
+        ]
+      },
+      {
+        "name": "Verify Logout Functionality",
+        "status": "failed",
+        "steps": [
+          { "name": "Click logout button", "status": "failed" }
+        ]
+      }
+    ]
+  },
+  {
+    "run_date": "2025-01-23T10:45:30.100Z",
+    "total_tests": 6,
+    "passed_tests": 6,
+    "failed_tests": 0,
+    "scenarios": [
+      {
+        "name": "Test Search Feature",
+        "status": "passed",
+        "steps": [
+          { "name": "Enter search query", "status": "passed" },
+          { "name": "Verify search results", "status": "passed" }
+        ]
+      },
+      {
+        "name": "Check User Profile Page",
+        "status": "passed",
+        "steps": [
+          { "name": "Navigate to profile page", "status": "passed" },
+          { "name": "Verify user details", "status": "passed" }
+        ]
+      }
+    ]
+  },
+  {
+    "run_date": "2025-01-24T11:30:45.250Z",
+    "total_tests": 3,
+    "passed_tests": 2,
+    "failed_tests": 1,
+    "scenarios": [
+      {
+        "name": "Test Add to Cart Functionality",
+        "status": "failed",
+        "steps": [
+          { "name": "Add item to cart", "status": "passed" },
+          { "name": "Verify cart total", "status": "failed" }
+        ]
+      },
+      {
+        "name": "Test Checkout Process",
+        "status": "passed",
+        "steps": [
+          { "name": "Enter payment details", "status": "passed" },
+          { "name": "Submit order", "status": "passed" }
+        ]
+      }
+    ]
+  },
+  {
+    "run_date": "2025-01-25T14:05:15.980Z",
+    "total_tests": 7,
+    "passed_tests": 5,
+    "failed_tests": 2,
+    "scenarios": [
+      {
+        "name": "Verify Home Page Load Time",
+        "status": "passed",
+        "steps": [
+          { "name": "Load home page", "status": "passed" },
+          { "name": "Verify load time is under 3 seconds", "status": "passed" }
+        ]
+      },
+      {
+        "name": "Check Contact Form Submission",
+        "status": "failed",
+        "steps": [
+          { "name": "Fill in contact form", "status": "passed" },
+          { "name": "Submit form", "status": "failed" }
+        ]
+      },
+      {
+        "name": "Test Password Reset",
+        "status": "passed",
+        "steps": [
+          { "name": "Request password reset email", "status": "passed" },
+          { "name": "Reset password using email link", "status": "passed" }
+        ]
+      }
+    ]
+  }
+]

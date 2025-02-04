@@ -1,0 +1,10 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<suite name="Test Suite" parallel="methods" thread-count="4">-->
+<!--    <test name="Test">-->
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="your.package.name.TestClass1"/>&ndash;&gt;-->
+<!--            <class name="TestRunners.RunUITest"/>-->
+<!--            <class name="TestRunners.RunUITest2"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->

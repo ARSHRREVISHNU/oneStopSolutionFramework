@@ -1,0 +1,12 @@
+stepdefinitions\BaseSetup.class
+stepdefinitions\BasicFunctionality.class
+stepdefinitions\Hooks.class
+stepdefinitions\WhenSteps.class
+TestRunners\ReRunUITest.class
+stepdefinitions\CatApiTest.class
+stepdefinitions\GoogleStepDefinitions.class
+TestRunners\ImageResizerAndCropper.class
+TestRunners\RunUITest.class
+stepdefinitions\ThenSteps.class
+TestRunners\RunAPITests.class
+stepdefinitions\WeatherApiStepDefinitions.class

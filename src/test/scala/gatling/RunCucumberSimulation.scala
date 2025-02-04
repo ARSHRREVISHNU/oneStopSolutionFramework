@@ -2,36 +2,36 @@ package gatling
 
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.Predef._
-import java.util.concurrent.Executors
-import io.cucumber.core.cli.Main
+import io.gatling.http.Predef._
+import java.util.Properties
 
 class RunCucumberSimulation extends Simulation {
 
-  val concurrentUsers = 10 // Number of concurrent users
-  val totalRequests = 100  // Total number of test executions
+  // Load properties
+  val props = new Properties()
+  props.load(getClass.getClassLoader.getResourceAsStream("config.properties"))
+  val baseUrl = props.getProperty("base.url")
+  val apiKey = props.getProperty("api.key")
 
-  val executor = Executors.newFixedThreadPool(concurrentUsers)
+  // Define HTTP Protocol
+  val httpProtocol = http
+    .baseUrl(baseUrl)
+    .acceptHeader("application/json")
 
-  // Define Gatling Scenario that calls Cucumber Tests
-  val scn = scenario("Run Cucumber Tests in Parallel")
-    .repeat(totalRequests / concurrentUsers) {
-      exec { session =>
-        executor.submit(new Runnable {
-          override def run(): Unit = {
-            Main.run(Array(
-              "--threads", concurrentUsers.toString,
-              "--glue", "stepdefinitions",
-              "--tags", "@weatherAPIGET",
-              "src/test/resources/features"
-            ), Thread.currentThread.getContextClassLoader)
-          }
-        })
-        session
-      }
+  // Define Scenario
+  val scn = scenario("Load Test - Weather API")
+    .repeat(100) { // Load testing with 100 requests
+      exec(
+        http("Get Weather Data")
+          .get("")
+          .queryParam("q", "Chennai")
+          .queryParam("key", apiKey)
+          .check(status.is(200))
+      )
     }
 
-  // Execute the test with multiple users
+  // Setup the load test
   setUp(
-    scn.inject(atOnceUsers(concurrentUsers))
-  )
+    scn.inject(atOnceUsers(10)) // 10 concurrent users
+  ).protocols(httpProtocol)
 }

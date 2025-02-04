@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Test Dashboard</h1>
+<h2>Summary</h2>
+<table border="1">
+    <tr>
+        <th>Run Date</th>
+        <th>Total Tests</th>
+        <th>Passed</th>
+        <th>Failed</th>
+    </tr>
+    <!-- Use a template engine or Java to dynamically inject rows -->
+    <tr>
+        <td>2025-01-21</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+</table>
+
+<h2>Graphs</h2>
+<canvas id="testChart" width="400" height="200"></canvas>
+<script>
+    const ctx = document.getElementById('testChart').getContext('2d');
+    const testChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Run 1', 'Run 2'], // Dynamically populate
+        datasets: [
+          {
+            label: 'Passed Tests',
+            data: [1, 3], // Dynamically populate
+            backgroundColor: 'green'
+          },
+          {
+            label: 'Failed Tests',
+            data: [0, 1], // Dynamically populate
+            backgroundColor: 'red'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
